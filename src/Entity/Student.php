@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\StudentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Embedded;
 
 /**
  * @ORM\Entity(repositoryClass=StudentRepository::class)
@@ -33,7 +34,7 @@ class Student
     private $email;
 
     /**
-     * @ORM\Embedded(class="Address")
+     * @Embedded(class="Address")
      */
     private $address;
 
@@ -83,7 +84,7 @@ class Student
         return $this;
     }
 
-    public function getAddress(): ?string
+    public function getAddress()
     {
         return $this->address;
     }
@@ -95,12 +96,12 @@ class Student
         return $this;
     }
 
-    public function getTeacher(): ?Teacher
+    public function getTeacher()
     {
         return $this->teacher;
     }
 
-    public function setTeacher(?Teacher $teacher): self
+    public function setTeacher(?Teacher $teacher)
     {
         $this->teacher = $teacher;
 
