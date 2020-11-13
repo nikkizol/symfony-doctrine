@@ -10,12 +10,13 @@ class AddressType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-//        new Address('saS',1,'SAs',12323);
+
         $builder
             ->add('street')
             ->add('streetNumber')
             ->add('city')
             ->add('zipcode')
+
         ;
     }
 

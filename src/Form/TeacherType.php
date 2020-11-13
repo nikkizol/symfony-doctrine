@@ -16,16 +16,12 @@ class TeacherType extends AbstractType
             ->add('lastName')
             ->add('email')
             ->add('address', AddressType::class);
-//            ->add('address_street_number')
-//            ->add('address_city')
-//            ->add('address_zipcode')
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Teacher::class,
+            'data_class' => Teacher::class, Address::class,
         ]);
     }
 }
